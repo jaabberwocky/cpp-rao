@@ -15,16 +15,16 @@ enum Piece
     King,
 };
 
-// void printBoard(Piece** board)
-// {
-//     for (int i = 0; i < DIMENSION; i++)
-//     {
-//         for (int j = 0; j < DIMENSION; j++)
-//         {
-//             cout << "R" << i << "|C" << j << ":" << board[i][j] << endl;
-//         }
-//     }
-// }
+void printBoard(Piece board[DIMENSION][DIMENSION])
+{
+    for (int i = 0; i < DIMENSION; i++)
+    {
+        for (int j = 0; j < DIMENSION; j++)
+        {
+            cout << "R" << i << "|C" << j << ":" << board[i][j] << endl;
+        }
+    }
+}
 
 int main()
 {
@@ -61,11 +61,11 @@ int main()
     /* Rooks */
     // white
     chessBoard[6][0] = Piece::Rook;
-    chessBoard[6][7] = Piece::Rook;
+    chessBoard[6][6] = Piece::Rook;
 
     // black
     chessBoard[0][0] = Piece::Rook;
-    chessBoard[0][7] = Piece::Rook;
+    chessBoard[0][6] = Piece::Rook;
 
     /* Queen + King */
     // white
@@ -77,12 +77,6 @@ int main()
     chessBoard[0][4] = Piece::King;
 
     // print board
-    for (int i = 0; i < DIMENSION; i++)
-    {
-        for (int j = 0; j < DIMENSION; j++)
-        {
-            cout << "R" << i << "|C" << j << ":" << chessBoard[i][j] << endl;
-        }
-    }
+    printBoard(chessBoard);
     return 0;
 }
